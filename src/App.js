@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Header from './header.js';
-import Nupp from './nupp.js';
+import Header from './header';
+import Nupp from './nupp';
+import Tabloo from './tabloo';
+import Keskmine from './tabloo2';
 import './App.css';
 
 class App extends Component {
@@ -9,15 +10,16 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Tabloo />
+        <div>
         <Nupp letter='A'/>
         <Nupp letter='B'/>
         <Nupp letter='C'/>
         <Nupp letter='D'/>
         <Nupp letter='E'/>
         <Nupp letter='F'/>
+</div>
+        <Keskmine />
       </div>
     );
   }

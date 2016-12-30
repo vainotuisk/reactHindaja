@@ -3,17 +3,7 @@
 }
 
 
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-.nupp {
+.Nupp {
   background: #00ffbf;
   border: 1px solid #999;
   float: left;
@@ -26,4 +16,32 @@
   padding: 0;
   text-align: center;
   width: 64px;
+}
+
+.Tabloo {
+  background: #2B293D;
+  color: #59C3C3;
+	text-shadow: 0 0 5px rgba(#59C3C3, .5);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 29px;
+	box-sizing: border-box;
+	height: 20%;
+	overflow: hidden;
+	font-size: 32px;
+	position: relative;
+}
+.Keskmine {
+  background: #2B293D;
+  color: #f4d742;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 29px 20px;
+	box-sizing: border-box;
+	height: 20%;
+	overflow: hidden;
+	font-size: 36px;
+	position: relative;
 }
