@@ -1,2 +1,0 @@
-# reactHindaja
-Hindaja veebiäpp (React)
