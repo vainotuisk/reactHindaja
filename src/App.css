@@ -18,6 +18,22 @@
   width: 64px;
 }
 
+.Nuppe {
+  background: #00ffbf;
+  color: #f46842;
+  border: 1px solid #999;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 64px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 64px;
+}
+
 .Tabloo {
   background: #2B293D;
   color: #59C3C3;
