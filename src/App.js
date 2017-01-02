@@ -9,11 +9,11 @@ import './App.css';
 class App extends Component {
 	constructor() {
 		super();
-		this.state = { summa: 0, hinded: [] };
+		this.state={ summa: 0, hinded: [' '] };
 	}
 	handleClick(e) {
-		var value = e.target.getAttribute('data-value');
-		var letter = e.target.getAttribute('data-letter');
+		var value=e.target.getAttribute('data-value');
+		var letter=e.target.getAttribute('data-letter');
 		console.log(value);
 		this.setState({summa: 11});
 		this.setState({hinded: this.state.hinded.concat(letter)});
@@ -27,7 +27,7 @@ class App extends Component {
 		return (
       <div className="App">
         <Header />
-        <Tabloo hinded =  {this.state.hinded}/>
+        <Tabloo hinded={this.state.hinded}/>
 
         <div>
           <Nupp onClick={this.handleClick.bind(this)} value="6" letter='A'/>
