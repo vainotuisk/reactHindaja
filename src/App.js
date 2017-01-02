@@ -9,7 +9,7 @@ import './App.css';
 class App extends Component {
 	constructor() {
 		super();
-		this.state={ summa: 0, hinded: [' '] };
+		this.state={ summa: 0, hinded: [] };
 	}
 	handleClick(e) {
 		var value=e.target.getAttribute('data-value');
@@ -21,6 +21,13 @@ class App extends Component {
 		console.log(this.state.summa);
 		console.log('hinded:' + this.state.hinded);
 		console.log('letter:' + letter);
+	}
+	removeItem() {
+		this.setState({
+//			hinded: this.state.hinded.pop()
+			hinded: this.state.hinded.filter((_, i) => i !== this.state.hinded.length-1)
+
+		});
 	}
 
 	render() {
@@ -39,7 +46,7 @@ class App extends Component {
         </div>
         <Keskmine />
         <Nuppe letter='X'/>
-				<Nuppe letter='<'/>
+				<Nuppe letter='<' onClick={this.removeItem.bind(this)}/>
         <Nuppe letter='?'></Nuppe>
 
 
