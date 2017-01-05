@@ -29,6 +29,14 @@ class App extends Component {
 
 		});
 	}
+	clearItem() {
+		this.setState({
+	//			hinded: this.state.hinded.pop()
+			hinded: this.state.hinded.filter((_, i) => i == this.state.hinded.length)
+
+		});
+	}
+
 
 	render() {
 		return (
@@ -45,11 +53,9 @@ class App extends Component {
           <Nupp onClick={this.handleClick.bind(this)} value="1" letter='F'/>
         </div>
         <Keskmine />
-        <Nuppe letter='X'/>
+        <Nuppe letter='X' onClick={this.clearItem.bind(this)}/>
 				<Nuppe letter='<' onClick={this.removeItem.bind(this)}/>
-        <Nuppe letter='?'></Nuppe>
-
-
+        <Nuppe letter='?'/>
       </div>
 		);
 	}
