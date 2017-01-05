@@ -7,20 +7,30 @@ import Keskmine from './tabloo2';
 import './App.css';
 
 class App extends Component {
-	constructor() {
-		super();
-		this.state={ summa: 0, hinded: [] };
+	constructor(props) {
+		super(props);
+		this.state={summa: 0, hinded: [] };
 	}
 	handleClick(e) {
-		var value=e.target.getAttribute('data-value');
+		var value=parseInt(e.target.getAttribute('data-value'),10);
 		var letter=e.target.getAttribute('data-letter');
-		console.log(value);
-		this.setState({summa: 11});
-		this.setState({hinded: this.state.hinded.concat(letter)});
-//		this.setState({hinded: hinded+'AB'});
-		console.log(this.state.summa);
-		console.log('hinded:' + this.state.hinded);
+		console.log('väärtus on:' + value);
 		console.log('letter:' + letter);
+		console.log('summa alguses on:'+ this.state.summa);
+		this.setState((prevState,props) =>
+		({
+			summa: prevState.summa + value
+		}));
+		console.log('summa on:'+ this.state.summa);
+		this.setState((prevState,props) =>
+		({
+			hinded: this.state.hinded.concat(letter)
+		}));
+		console.log('hinded:' + this.state.hinded);
+
+		console.log('hindeid:'+ this.state.hinded.length);
+
+
 	}
 	removeItem() {
 		this.setState({
@@ -32,7 +42,7 @@ class App extends Component {
 	clearItem() {
 		this.setState({
 	//			hinded: this.state.hinded.pop()
-			hinded: this.state.hinded.filter((_, i) => i == this.state.hinded.length)
+			hinded: this.state.hinded.filter((_, i) => i === this.state.hinded.length)
 
 		});
 	}
