@@ -12,16 +12,18 @@ class App extends Component {
 		this.state={summa: 0, hinded: [] };
 	}
 	handleClick(e) {
+		e.preventDefault();
 		var value=parseInt(e.target.getAttribute('data-value'),10);
 		var letter=e.target.getAttribute('data-letter');
 		console.log('väärtus on:' + value);
 		console.log('letter:' + letter);
-		console.log('summa alguses on:'+ this.state.summa);
-		this.setState((prevState,props) =>
+		console.log('summa enne klahvivajutust on:'+ this.state.summa);
+		this.setState((prevState) =>
 		({
-			summa: prevState.summa + value
+			summa: this.state.summa+prevState.summa + value
+		//	summa: prevState.summa + value
 		}));
-		console.log('summa on:'+ this.state.summa);
+		console.log('summa peale klahvivajutust on:'+ this.state.summa);
 		this.setState((prevState,props) =>
 		({
 			hinded: this.state.hinded.concat(letter)
